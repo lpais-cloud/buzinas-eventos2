@@ -1,0 +1,5 @@
+{
+  "name": "Buzinas Eventos",
+  "description": "A functional prototype of a community event management platform. Users can view, create, and manage community events, assign tasks, and participate. Designed with accessibility for elderly users in mind.",
+  "requestFramePermissions": []
+}
