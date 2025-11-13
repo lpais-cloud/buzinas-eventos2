@@ -1,15 +1,15 @@
 services:
   # Define o serviço como um site estático para o frontend.
-  - type: static_site # CORREÇÃO: O tipo correto para sites estáticos é 'static_site'.
+  - type: web
     name: buzinas-eventos
     env: static
+    plan: free # Especifica o plano gratuito do Render.
     # O comando de build que será executado a cada novo deploy.
-    # Isso assume que você tem um arquivo package.json com um script "build".
-    # Exemplo com Vite: "build": "tsc && vite build"
-    buildCommand: 'npm install && npm run build'
+    # Instala as dependências e depois executa o script "build" do package.json.
+    buildCommand: npm install && npm run build
     # O diretório onde os arquivos estáticos compilados estão localizados.
-    # O Vite geralmente usa 'dist', enquanto o Create React App usa 'build'.
-    publishDir: dist
+    # O Vite, que adicionei ao projeto, usa 'dist' como padrão.
+    staticPublishPath: dist
     # Regra para reescrever todas as requisições para o index.html,
     # o que é essencial para o funcionamento do roteamento no lado do cliente em SPAs (Single Page Applications).
     routes:
