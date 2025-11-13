@@ -3,7 +3,6 @@ services:
   - type: web
     name: buzinas-eventos
     env: static
-    plan: free # Especifica o plano gratuito do Render.
     # O comando de build que será executado a cada novo deploy.
     # Instala as dependências e depois executa o script "build" do package.json.
     buildCommand: npm install && npm run build
